@@ -68,3 +68,13 @@ env_ubuntu() {
   add-repo
   donwload
 }
+
+while [ -n "$1" ]
+  do
+    case "$1" in
+        --docker )install-docker;;
+        --native )env_ubuntu;;
+        -?)help;;
+      esac
+  shift
+done
